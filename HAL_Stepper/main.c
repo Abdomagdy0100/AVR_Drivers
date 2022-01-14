@@ -4,6 +4,8 @@
 /* Student ID : 012008210103						  */
 /* Subject    : Interfacing_Stepper_Motor             */
 /******************************************************/
+
+#include "util/delay.h"
 #include "LIB/BIT_MATH.h"
 #include "LIB/STD_TYPES.h"
 #include "DIO_int.h"
@@ -29,27 +31,41 @@ void main(void)
 	{
 		for(Counter=1  ; Counter<=Angel_iterations ; Counter++)
 		{
-			//for make full step we need 4 iterations
+			/*for make full step we need 4 iterations in each one we activate one coil
+			 * using low signal from AVR and deactivate others by high signal  */
 			//iterate (1)
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN0,DIO_LOW);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN1,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN2,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN3,DIO_HIGH);
+			_delay_ms(2);
 			//iterate (2)
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN0,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN1,DIO_LOW);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN2,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN3,DIO_HIGH);
+			_delay_ms(2);
 			//iterate (3)
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN0,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN1,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN2,DIO_LOW);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN3,DIO_HIGH);
+			_delay_ms(2);
 			//iterate (4)
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN0,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN1,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN2,DIO_HIGH);
 			DIO_SetPinValue(DIO_PORTA,DIO_PIN3,DIO_LOW);
+			_delay_ms(2);
+			if(Counter==Angel_iterations)
+			{
+				//stop the magnet inside stepper be deactivate all coils
+				DIO_SetPinValue(DIO_PORTA,DIO_PIN0,DIO_HIGH);
+				DIO_SetPinValue(DIO_PORTA,DIO_PIN1,DIO_HIGH);
+				DIO_SetPinValue(DIO_PORTA,DIO_PIN2,DIO_HIGH);
+				DIO_SetPinValue(DIO_PORTA,DIO_PIN3,DIO_HIGH);
+			}
+
 		}
 
 	}
