@@ -1,7 +1,7 @@
 /******************************************************/
 /* Author     : ABDO_MAGDY_AHMED                      */
-/* Group ID   : 0120082101							  */
-/* Student ID : 012008210103						  */
+/* Group ID   : 0120082101			      */
+/* Student ID : 012008210103			      */
 /* Subject    : Interfacing_ADC_Peripheral            */
 /******************************************************/
 #include "LIB/BIT_MATH.h"
