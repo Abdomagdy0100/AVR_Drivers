@@ -1,9 +1,9 @@
-/*
- * DIO_Interface.h
- *
- *  Created on: ???/???/????
- *      Author: magdy
- */
+/******************************************************/
+/* Author     : ABDO_MAGDY_AHMED                      */
+/* Group ID   : 0120082101			      */
+/* Student ID : 012008210103			      */
+/* Subject    : Interfacing_DIO                       */
+/******************************************************/
 
 #ifndef DIO_INTERFACE_H_
 #define DIO_INTERFACE_H_
