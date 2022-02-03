@@ -1,9 +1,9 @@
-/*
- * DIO_prog.c
- *
- *  Created on: ???/???/????
- *      Author: magdy
- */
+/******************************************************/
+/* Author     : ABDO_MAGDY_AHMED                      */
+/* Group ID   : 0120082101			      */
+/* Student ID : 012008210103			      */
+/* Subject    : Interfacing_DIO                       */
+/******************************************************/
 #include "LIB/STD_TYPES.h"
 #include "LIB/BIT_MATH.h"
 #include "DIO_interface.h"
